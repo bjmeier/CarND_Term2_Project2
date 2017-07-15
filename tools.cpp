@@ -37,6 +37,10 @@ VectorXd Tools::CalculateRMSE(const vector<VectorXd> &estimations,
 	for(int i=0; i < estimations.size(); ++i){
 	  // ... your code here
 	  VectorXd res = (estimations[i]-ground_truth[i]).array().square();
+	  if (i == (estimations.size()-1)){
+	  //cout << "res: \n" << res << "\n";
+	  //cout << "gtr: \n" << ground_truth[i] << "\n";
+	  }
 	  rmse = rmse + res;
 	  
 	}
